@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Golu Foundation Website
 
-## Getting Started
+A modern, responsive website for the Golu Foundation - a non-profit organization dedicated to transforming lives through quality education and environmental conservation.
 
-First, run the development server:
+## 🌟 Features
+
+### 🎨 Design & User Experience
+- **Modern & Clean Design** - Professional layout with appealing aesthetics
+- **Fully Responsive** - Optimized for all device sizes (mobile, tablet, desktop)
+- **Smooth Animations** - Framer Motion powered animations and transitions
+- **Interactive Elements** - Hover effects, scroll animations, and micro-interactions
+- **Accessibility** - Built with accessibility best practices
+
+### 📱 Sections
+
+1. **Hero Section** - Compelling introduction with animated statistics
+2. **About Section** - Foundation's mission, values, and impact
+3. **School Section** - Dedicated section for Golu Biddaniketon school
+4. **Environment Section** - Tree plantation and conservation initiatives
+5. **Contact Section** - Contact form and information
+6. **Footer** - Links, social media, and newsletter signup
+
+### 🛠 Technical Features
+- **Next.js 15** - Latest React framework with App Router
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Smooth animations and transitions
+- **React Icons** - Professional icon library
+- **SEO Optimized** - Meta tags and Open Graph support
+- **Performance Optimized** - Image optimization and code splitting
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone [repository-url]
+cd golufoundation
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and custom CSS
+│   ├── layout.js           # Root layout with metadata
+│   └── page.js             # Main homepage
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.js       # Navigation bar
+│   │   └── Footer.js       # Footer component
+│   └── sections/
+│       ├── Hero.js         # Hero section
+│       ├── About.js        # About section
+│       ├── School.js       # School section
+│       ├── Environment.js  # Environment section
+│       └── Contact.js      # Contact section
+```
 
-## Learn More
+## 🎯 Key Highlights
 
-To learn more about Next.js, take a look at the following resources:
+### Golu Biddaniketon School
+- Showcases the foundation's educational programs
+- Student achievements and statistics
+- Program highlights with modern curriculum
+- Call-to-action for admissions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environmental Conservation
+- Tree plantation initiatives
+- Environmental impact statistics
+- Community involvement programs
+- Conservation education efforts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Professional Design Elements
+- Gradient backgrounds and text effects
+- Card-based layouts with hover animations
+- Professional typography and spacing
+- Custom scrollbar and focus states
 
-## Deploy on Vercel
+## 🌐 Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework**: Next.js 15.4.3
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Fonts**: Inter (Google Fonts)
+- **Build Tool**: Webpack (via Next.js)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Customization
+
+### Colors
+The website uses a green and blue color scheme representing nature and trust:
+- Primary Green: `#22c55e`
+- Primary Blue: `#2563eb`
+- Gray scales for text and backgrounds
+
+### Adding Content
+1. **Images**: Replace placeholder URLs with actual foundation images
+2. **Content**: Update text content in each component
+3. **Contact Info**: Update contact details in Contact and Footer components
+4. **Social Links**: Add actual social media URLs in Footer component
+
+### Adding New Sections
+1. Create new component in `src/components/sections/`
+2. Import and add to `src/app/page.js`
+3. Update navigation links in Navbar if needed
+
+## 🔧 Build & Deployment
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run ESLint
+npm run lint
+```
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 640px
+- **Tablet**: 640px - 1024px  
+- **Desktop**: > 1024px
+- **Large Desktop**: > 1280px
+
+## 🤝 Contributing
+
+When adding content or making changes:
+
+1. Maintain the existing design system
+2. Ensure all components are responsive
+3. Test animations and interactions
+4. Update this README if adding new features
+
+## 📞 Support
+
+For questions about the website or foundation:
+- Email: info@golufoundation.org
+- Phone: +1 (555) 123-4567
+
+---
+
+**Built with ❤️ for a better world** - Golu Foundation
