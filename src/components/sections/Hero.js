@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-blue-900/80 z-10"></div>
         <img
           src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="Education and Community"
+          alt="শিক্ষা এবং সম্প্রদায়"
           className="w-full h-full object-cover"
         />
       </div>
@@ -41,9 +41,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Empowering Communities Through
+            সম্প্রদায়কে ক্ষমতায়ন করি
             <span className="block bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-              Education & Environment
+              শিক্ষা ও পরিবেশের মাধ্যমে
             </span>
           </motion.h1>
 
@@ -53,7 +53,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            The Golu Foundation is dedicated to creating lasting change through quality education at Golu Biddaniketon and environmental conservation initiatives.
+            গোলু ফাউন্ডেশন গোলু বিদ্যানিকেতনে গুণগত শিক্ষা এবং পরিবেশ সংরক্ষণ উদ্যোগের মাধ্যমে স্থায়ী পরিবর্তন আনতে প্রতিশ্রুতিবদ্ধ।
           </motion.p>
 
           <motion.div
@@ -67,7 +67,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
               whileTap={{ scale: 0.95 }}
             >
-              Join Our Mission
+              আমাদের মিশনে যোগ দিন
             </motion.button>
 
             <motion.button
@@ -76,7 +76,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <FaPlay className="w-4 h-4" />
-              <span>Watch Story</span>
+              <span>গল্প দেখুন</span>
             </motion.button>
           </motion.div>
         </motion.div>
@@ -89,16 +89,16 @@ const Hero = () => {
           transition={{ delay: 1.2, duration: 0.8 }}
         >
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-2">500+</div>
-            <div className="text-gray-200">Students Educated</div>
+            <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-2">৫০০+</div>
+            <div className="text-gray-200">শিক্ষার্থী শিক্ষিত</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">1000+</div>
-            <div className="text-gray-200">Trees Planted</div>
+            <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-2">১০০০+</div>
+            <div className="text-gray-200">গাছ লাগানো হয়েছে</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-2">10+</div>
-            <div className="text-gray-200">Years of Service</div>
+            <div className="text-3xl sm:text-4xl font-bold text-green-400 mb-2">১০+</div>
+            <div className="text-gray-200">বছর সেবা</div>
           </div>
         </motion.div>
       </div>

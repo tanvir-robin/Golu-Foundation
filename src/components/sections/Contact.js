@@ -7,23 +7,23 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: FaMapMarkerAlt,
-      title: "Visit Us",
-      details: ["123 Foundation Street", "City, State 12345", "Country"]
+      title: "আমাদের দেখুন",
+      details: ["১২৩ ফাউন্ডেশন স্ট্রিট", "শহর, রাজ্য ১২৩৪৫", "দেশ"]
     },
     {
       icon: FaPhone,
-      title: "Call Us",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568"]
+      title: "আমাদের কল করুন",
+      details: ["+১ (৫৫৫) ১২৩-৪৫৬৭", "+১ (৫৫৫) ১২৩-৪৫৬৮"]
     },
     {
       icon: FaEnvelope,
-      title: "Email Us",
+      title: "আমাদের ইমেইল করুন",
       details: ["info@golufoundation.org", "contact@golufoundation.org"]
     },
     {
       icon: FaClock,
-      title: "Office Hours",
-      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"]
+      title: "অফিসের সময়",
+      details: ["সোমবার - শুক্রবার: সকাল ৯:০০ - বিকাল ৬:০০", "শনিবার: সকাল ১০:০০ - বিকাল ৪:০০", "রবিবার: বন্ধ"]
     }
   ];
 
@@ -39,10 +39,10 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
-            Get In <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Touch</span>
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">যোগাযোগ</span> করুন
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to make a difference? Contact us to learn more about our programs, volunteer opportunities, or how you can support our mission.
+            পার্থক্য তৈরি করতে প্রস্তুত? আমাদের কর্মসূচি, স্বেচ্ছাসেবার সুযোগ, বা আপনি কীভাবে আমাদের মিশনকে সমর্থন করতে পারেন সে সম্পর্কে জানতে আমাদের সাথে যোগাযোগ করুন।
           </p>
         </motion.div>
 
@@ -55,29 +55,29 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">আমাদের একটি বার্তা পাঠান</h3>
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2">First Name</label>
+                  <label className="block text-gray-700 font-medium mb-2">নামের প্রথম অংশ</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Your first name"
+                    placeholder="আপনার নামের প্রথম অংশ"
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2">Last Name</label>
+                  <label className="block text-gray-700 font-medium mb-2">নামের শেষ অংশ</label>
                   <input
                     type="text"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                    placeholder="Your last name"
+                    placeholder="আপনার নামের শেষ অংশ"
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Email</label>
+                <label className="block text-gray-700 font-medium mb-2">ইমেইল</label>
                 <input
                   type="email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
@@ -86,23 +86,23 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Subject</label>
+                <label className="block text-gray-700 font-medium mb-2">বিষয়</label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200">
-                  <option>General Inquiry</option>
-                  <option>School Admission</option>
-                  <option>Volunteer Opportunity</option>
-                  <option>Donation</option>
-                  <option>Tree Plantation Program</option>
-                  <option>Partnership</option>
+                  <option>সাধারণ জিজ্ঞাসা</option>
+                  <option>স্কুলে ভর্তি</option>
+                  <option>স্বেচ্ছাসেবার সুযোগ</option>
+                  <option>দান</option>
+                  <option>গাছ লাগানো কর্মসূচি</option>
+                  <option>সহযোগিতা</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">Message</label>
+                <label className="block text-gray-700 font-medium mb-2">বার্তা</label>
                 <textarea
                   rows="4"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 resize-none"
-                  placeholder="Tell us how we can help you..."
+                  placeholder="আমরা কীভাবে আপনাকে সাহায্য করতে পারি তা বলুন..."
                 ></textarea>
               </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
               >
                 <FaPaperPlane className="w-5 h-5" />
-                <span>Send Message</span>
+                <span>বার্তা পাঠান</span>
               </motion.button>
             </form>
           </motion.div>
@@ -160,11 +160,11 @@ const Contact = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-gray-800 mb-4">Find Us</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-4">আমাদের খুঁজুন</h4>
               <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center">
                 <div className="text-center text-gray-500">
                   <FaMapMarkerAlt className="w-12 h-12 mx-auto mb-2" />
-                  <p>Interactive map will be available soon</p>
+                  <p>ইন্টারেক্টিভ মানচিত্র শীঘ্রই উপলব্ধ হবে</p>
                 </div>
               </div>
             </motion.div>
@@ -180,9 +180,9 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Make a Difference?</h3>
+            <h3 className="text-2xl font-bold mb-4">পার্থক্য তৈরি করতে প্রস্তুত?</h3>
             <p className="text-lg mb-6 opacity-90">
-              Join us in our mission to build a better tomorrow through education and environmental conservation.
+              শিক্ষা এবং পরিবেশ সংরক্ষণের মাধ্যমে একটি ভালো আগামীকাল গড়ে তোলার আমাদের মিশনে যোগ দিন।
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -190,14 +190,14 @@ const Contact = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Become a Volunteer
+                স্বেচ্ছাসেবক হন
               </motion.button>
               <motion.button
                 className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Make a Donation
+                দান করুন
               </motion.button>
             </div>
           </div>

@@ -2,54 +2,55 @@
 
 import { motion } from 'framer-motion';
 import { FaLeaf, FaTree, FaSeedling, FaGlobe } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Environment = () => {
   const initiatives = [
     {
       icon: FaTree,
-      title: "Tree Plantation Drives",
-      description: "Regular community tree planting events to increase green cover and combat climate change.",
-      count: "1000+",
-      label: "Trees Planted"
+      title: "গাছ লাগানো কার্যক্রম",
+      description: "সবুজ আচ্ছাদন বৃদ্ধি এবং জলবায়ু পরিবর্তন মোকাবেলায় নিয়মিত সম্প্রদায় গাছ লাগানো অনুষ্ঠান।",
+      count: "১০০০+",
+      label: "গাছ লাগানো হয়েছে"
     },
     {
       icon: FaSeedling,
-      title: "Nursery Development",
-      description: "Maintaining nurseries to grow saplings and distribute them to communities.",
-      count: "50+",
-      label: "Nurseries Managed"
+      title: "চারা উৎপাদন",
+      description: "চারা উৎপাদন এবং সম্প্রদায়ে বিতরণের জন্য নার্সারি পরিচালনা।",
+      count: "৫০+",
+      label: "নার্সারি পরিচালিত"
     },
     {
       icon: FaGlobe,
-      title: "Environmental Education",
-      description: "Spreading awareness about environmental conservation through workshops and campaigns.",
-      count: "5000+",
-      label: "People Educated"
+      title: "পরিবেশ শিক্ষা",
+      description: "কর্মশালা এবং প্রচারণার মাধ্যমে পরিবেশ সংরক্ষণ সম্পর্কে সচেতনতা ছড়ানো।",
+      count: "৫০০০+",
+      label: "মানুষ শিক্ষিত"
     },
     {
       icon: FaLeaf,
-      title: "Green Initiatives",
-      description: "Promoting sustainable practices and eco-friendly solutions in communities.",
-      count: "25+",
-      label: "Green Projects"
+      title: "সবুজ উদ্যোগ",
+      description: "সম্প্রদায়ে টেকসই অনুশীলন এবং পরিবেশবান্ধব সমাধান প্রচার।",
+      count: "২৫+",
+      label: "সবুজ প্রকল্প"
     }
   ];
 
   const impacts = [
     {
       image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      title: "Reforestation Programs",
-      description: "Transforming barren lands into lush green forests through systematic plantation drives."
+      title: "বনায়ন কর্মসূচি",
+      description: "পদ্ধতিগত গাছ লাগানো কার্যক্রমের মাধ্যমে অনুর্বর জমিকে ঘন সবুজ বনে রূপান্তর।"
     },
     {
       image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      title: "Community Gardens",
-      description: "Creating community spaces that bring people together while promoting green living."
+      title: "সম্প্রদায় উদ্যান",
+      description: "মানুষকে একত্রিত করে সবুজ জীবনযাপন প্রচার করে এমন সম্প্রদায় স্থান সৃষ্টি।"
     },
     {
       image: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      title: "Educational Workshops",
-      description: "Teaching sustainable practices and environmental awareness to all age groups."
+      title: "শিক্ষামূলক কর্মশালা",
+      description: "সব বয়সের মানুষের জন্য টেকসই অনুশীলন এবং পরিবেশ সচেতনতা শিক্ষা।"
     }
   ];
 
@@ -65,10 +66,10 @@ const Environment = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-4">
-            Environmental <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Conservation</span>
+            পরিবেশ <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">সংরক্ষণ</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Protecting our planet through dedicated environmental initiatives, tree plantation drives, and community-based conservation programs.
+            নিবেদিত পরিবেশগত উদ্যোগ, গাছ লাগানো কার্যক্রম এবং সম্প্রদায়ভিত্তিক সংরক্ষণ কর্মসূচির মাধ্যমে আমাদের গ্রহ রক্ষা করা।
           </p>
         </motion.div>
 
@@ -82,19 +83,19 @@ const Environment = () => {
         >
           <img
             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
-            alt="Environmental Conservation"
+            alt="পরিবেশ সংরক্ষণ"
             className="w-full h-96 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/80 to-blue-900/80 flex items-center justify-center">
             <div className="text-center text-white max-w-2xl mx-auto px-4">
-              <h3 className="text-3xl sm:text-4xl font-bold mb-4">Green Earth, Bright Future</h3>
-              <p className="text-xl mb-6">Join us in our mission to create a sustainable environment for future generations</p>
+              <h3 className="text-3xl sm:text-4xl font-bold mb-4">সবুজ পৃথিবী, উজ্জ্বল ভবিষ্যত</h3>
+              <p className="text-xl mb-6">ভবিষ্যত প্রজন্মের জন্য একটি টেকসই পরিবেশ সৃষ্টির আমাদের মিশনে যোগ দিন</p>
               <motion.button
                 className="bg-green-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Join Tree Plantation
+                গাছ লাগানোতে যোগ দিন
               </motion.button>
             </div>
           </div>
@@ -131,7 +132,7 @@ const Environment = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Our Environmental Impact</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">আমাদের পরিবেশগত প্রভাব</h3>
           <div className="grid lg:grid-cols-3 gap-8">
             {impacts.map((impact, index) => (
               <motion.div
@@ -169,24 +170,26 @@ const Environment = () => {
           viewport={{ once: true }}
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">Be Part of the Green Revolution</h3>
+            <h3 className="text-3xl font-bold mb-4">সবুজ বিপ্লবে অংশ নিন</h3>
             <p className="text-xl mb-8 opacity-90">
-              Every tree planted is a step towards a healthier planet. Join our upcoming tree plantation drives and make a difference.
+              প্রতিটি লাগানো গাছ একটি সুস্থ গ্রহের দিকে একটি পদক্ষেপ। আমাদের আসন্ন গাছ লাগানো কার্যক্রমে যোগ দিন এবং পার্থক্য তৈরি করুন।
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                className="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Register for Next Drive
-              </motion.button>
+              <Link href="/tree-plant">
+                <motion.button
+                  className="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  বিস্তারিত দেখুন
+                </motion.button>
+              </Link>
               <motion.button
                 className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Sponsor a Tree
+                একটি গাছ স্পনসর করুন
               </motion.button>
             </div>
           </div>

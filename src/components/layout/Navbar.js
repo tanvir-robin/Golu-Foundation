@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaLeaf, FaHeart } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +12,32 @@ const Navbar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const navItems = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'School', href: '#school', id: 'school' },
-    { name: 'Environment', href: '#environment', id: 'environment' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: 'হোম', href: '#home', id: 'home' },
+    { name: 'আমাদের সম্পর্কে', href: '#about', id: 'about' },
+    { 
+      name: 'স্কুল', 
+      href: '#school', 
+      id: 'school',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'স্কুলের বিবরণ', href: '/school' },
+        { name: 'ভর্তি তথ্য', href: '/school#admission' }
+      ]
+    },
+    { 
+      name: 'পরিবেশ', 
+      href: '#environment', 
+      id: 'environment',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'বৃক্ষরোপণ কর্মসূচি', href: '/tree-plant' },
+        { name: 'পরিবেশ সংরক্ষণ', href: '#environment' }
+      ]
+    },
+    { name: 'যোগাযোগ', href: '#contact', id: 'contact' },
   ];
 
   // Scroll spy and navbar visibility effect
@@ -104,16 +124,19 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
             <div className="relative">
-              <div className="bg-gradient-to-r from-green-500 to-blue-600 p-3 rounded-2xl shadow-lg">
-                <FaLeaf className="text-white w-7 h-7" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
+              <Image
+                src="/images/logo/logo_transparent.png"
+                alt="GoLu Foundation Logo"
+                width={50}
+                height={50}
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                Golu Foundation
+                GoLu Foundation
               </h1>
-              <p className="text-sm text-gray-500 font-medium">Building Better Tomorrow</p>
+              <p className="text-sm text-gray-500 font-medium">God Lives Universal</p>
             </div>
           </motion.div>
 
@@ -121,46 +144,86 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <div className="flex items-center space-x-1 bg-gray-50/80 rounded-full p-2 backdrop-blur-sm">
               {navItems.map((item, index) => (
-                <motion.button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href, item.id)}
-                  className={`relative px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'text-white'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {/* Active section indicator */}
-                  <AnimatePresence>
-                    {activeSection === item.id && (
+                <div key={item.name} className="relative">
+                  <motion.button
+                    onClick={() => {
+                      if (item.hasDropdown) {
+                        setOpenDropdown(openDropdown === item.id ? null : item.id);
+                      } else {
+                        handleNavClick(item.href, item.id);
+                      }
+                    }}
+                    onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.id)}
+                    onMouseLeave={() => item.hasDropdown && setOpenDropdown(null)}
+                    className={`relative px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 ${
+                      activeSection === item.id
+                        ? 'text-white'
+                        : 'text-gray-600 hover:text-gray-800'
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {/* Active section indicator */}
+                    <AnimatePresence>
+                      {activeSection === item.id && (
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 rounded-full shadow-lg"
+                          layoutId="activeSection"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                        />
+                      )}
+                    </AnimatePresence>
+                    
+                    {/* Text */}
+                    <span className="relative z-10">{item.name}</span>
+                    
+                    {/* Hover indicator */}
+                    {activeSection !== item.id && (
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 rounded-full shadow-lg"
-                        layoutId="activeSection"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
+                        className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-green-500 to-blue-600 rounded-full"
+                        whileHover={{ width: '80%', x: '-50%' }}
                         transition={{ type: "spring", stiffness: 400, damping: 30 }}
                       />
                     )}
-                  </AnimatePresence>
-                  
-                  {/* Text */}
-                  <span className="relative z-10">{item.name}</span>
-                  
-                  {/* Hover indicator */}
-                  {activeSection !== item.id && (
-                    <motion.div
-                      className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-green-500 to-blue-600 rounded-full"
-                      whileHover={{ width: '80%', x: '-50%' }}
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
+                  </motion.button>
+
+                  {/* Dropdown Menu */}
+                  {item.hasDropdown && (
+                    <AnimatePresence>
+                      {openDropdown === item.id && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50"
+                          onMouseEnter={() => setOpenDropdown(item.id)}
+                          onMouseLeave={() => setOpenDropdown(null)}
+                        >
+                          {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
+                            <motion.a
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-green-600 transition-colors duration-200"
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: dropdownIndex * 0.05 }}
+                              onClick={() => setOpenDropdown(null)}
+                            >
+                              {dropdownItem.name}
+                            </motion.a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   )}
-                </motion.button>
+                </div>
               ))}
             </div>
           </div>
@@ -227,31 +290,78 @@ const Navbar = () => {
             >
               <div className="px-4 py-6 space-y-3 bg-white/95 backdrop-blur-md">
                 {navItems.map((item, index) => (
-                  <motion.button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href, item.id)}
-                    className={`w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
-                    }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, x: 5 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span>{item.name}</span>
-                      {activeSection === item.id && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="w-2 h-2 bg-white rounded-full"
-                        />
-                      )}
-                    </div>
-                  </motion.button>
+                  <div key={item.name}>
+                    <motion.button
+                      onClick={() => {
+                        if (item.hasDropdown) {
+                          setOpenDropdown(openDropdown === item.id ? null : item.id);
+                        } else {
+                          handleNavClick(item.href, item.id);
+                        }
+                      }}
+                      className={`w-full text-left px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
+                        activeSection === item.id
+                          ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-lg'
+                          : 'text-gray-700 hover:bg-gray-50 hover:text-green-600'
+                      }`}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{item.name}</span>
+                        <div className="flex items-center space-x-2">
+                          {activeSection === item.id && (
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              className="w-2 h-2 bg-white rounded-full"
+                            />
+                          )}
+                          {item.hasDropdown && (
+                            <motion.div
+                              animate={{ rotate: openDropdown === item.id ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="w-4 h-4"
+                            >
+                              ▼
+                            </motion.div>
+                          )}
+                        </div>
+                      </div>
+                    </motion.button>
+
+                    {/* Mobile Dropdown Items */}
+                    {item.hasDropdown && (
+                      <AnimatePresence>
+                        {openDropdown === item.id && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="ml-4 mt-2 space-y-2"
+                          >
+                            {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
+                              <motion.a
+                                key={dropdownItem.name}
+                                href={dropdownItem.href}
+                                className="block px-4 py-2 text-sm text-gray-600 hover:text-green-600 transition-colors duration-200"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: dropdownIndex * 0.05 }}
+                                onClick={() => setOpenDropdown(null)}
+                              >
+                                {dropdownItem.name}
+                              </motion.a>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
+                  </div>
                 ))}
                 
                 {/* Mobile CTA */}

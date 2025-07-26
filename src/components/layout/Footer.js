@@ -2,20 +2,21 @@
 
 import { motion } from 'framer-motion';
 import { FaLeaf, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaHeart } from 'react-icons/fa';
+import Image from 'next/image';
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'School', href: '#school' },
-    { name: 'Environment', href: '#environment' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'আমাদের সম্পর্কে', href: '#about' },
+    { name: 'স্কুল', href: '#school' },
+    { name: 'পরিবেশ', href: '#environment' },
+    { name: 'যোগাযোগ', href: '#contact' },
   ];
 
   const programs = [
-    { name: 'Golu Biddaniketon', href: '#school' },
-    { name: 'Tree Plantation', href: '#environment' },
-    { name: 'Community Service', href: '#about' },
-    { name: 'Educational Workshops', href: '#school' },
+    { name: 'গোলু বিদ্যানিকেতন', href: '#school' },
+    { name: 'গাছ লাগানো', href: '#environment' },
+    { name: 'সম্প্রদায় সেবা', href: '#about' },
+    { name: 'শিক্ষামূলক কর্মশালা', href: '#school' },
   ];
 
   const socialLinks = [
@@ -39,16 +40,20 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-green-500 to-blue-600 p-2 rounded-full">
-                <FaLeaf className="text-white w-6 h-6" />
-              </div>
+              <Image
+                src="/images/logo/logo_transparent.png"
+                alt="GoLu Foundation Logo"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
               <div>
-                <h3 className="text-xl font-bold">Golu Foundation</h3>
-                <p className="text-sm text-gray-400">Building Better Tomorrow</p>
+                <h3 className="text-xl font-bold">GoLu Foundation</h3>
+                <p className="text-sm text-gray-400">God Lives Universal</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6">
-              A non-profit organization dedicated to transforming lives through quality education and environmental conservation initiatives.
+              গুণগত শিক্ষা এবং পরিবেশ সংরক্ষণ উদ্যোগের মাধ্যমে জীবন পরিবর্তনে নিবেদিত একটি অলাভজনক সংস্থা।
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -73,7 +78,7 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">দ্রুত লিংক</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -96,7 +101,7 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-white">Our Programs</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">আমাদের কর্মসূচি</h4>
             <ul className="space-y-3">
               {programs.map((program, index) => (
                 <li key={index}>
@@ -119,18 +124,18 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-white">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">যোগাযোগ করুন</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-green-400 w-5 h-5" />
                 <div>
-                  <p className="text-gray-400">123 Foundation Street</p>
-                  <p className="text-gray-400">City, State 12345</p>
+                  <p className="text-gray-400">১২৩ ফাউন্ডেশন স্ট্রিট</p>
+                  <p className="text-gray-400">শহর, রাজ্য ১২৩৪৫</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 w-5 h-5" />
-                <p className="text-gray-400">+1 (555) 123-4567</p>
+                <p className="text-gray-400">+১ (৫৫৫) ১২৩-৪৫৬৭</p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-green-400 w-5 h-5" />
@@ -140,11 +145,11 @@ const Footer = () => {
             
             {/* Newsletter */}
             <div className="mt-6">
-              <h5 className="text-white font-medium mb-3">Stay Updated</h5>
+              <h5 className="text-white font-medium mb-3">আপডেট থাকুন</h5>
               <div className="flex">
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder="আপনার ইমেইল"
                   className="flex-1 px-4 py-2 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 />
                 <motion.button
@@ -152,7 +157,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Subscribe
+                  সাবস্ক্রাইব
                 </motion.button>
               </div>
             </div>
@@ -171,12 +176,12 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Golu Foundation. All rights reserved.
+              © ২০২৪ গোলু ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।
             </p>
             <div className="flex items-center space-x-1 mt-4 md:mt-0">
-              <p className="text-gray-400 text-sm">Made with</p>
+              <p className="text-gray-400 text-sm">একটি ভালো বিশ্বের জন্য</p>
               <FaHeart className="text-red-500 w-4 h-4" />
-              <p className="text-gray-400 text-sm">for a better world</p>
+              <p className="text-gray-400 text-sm">দিয়ে তৈরি</p>
             </div>
           </div>
         </div>
