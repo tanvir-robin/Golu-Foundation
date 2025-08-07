@@ -41,9 +41,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            সম্প্রদায়কে ক্ষমতায়ন করি
+            ঈশ্বর সর্বত্র বিরাজমান
             <span className="block bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-              শিক্ষা ও পরিবেশের মাধ্যমে
+              বিশ্বজনীন কল্যাণে
             </span>
           </motion.h1>
 

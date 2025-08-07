@@ -15,7 +15,7 @@ export const organizationData = {
 
   // Contact Information
   contact: {
-    address: "গোলু গ্রাম, জিরবাড়ি, চট্টগ্রাম",
+    address: "PSTU, Dumki",
     phone: "+৮৮০ ১৮১২-৩৪৫৬৭৮",
     email: "info@golufoundation.org",
     website: "www.golufoundation.org",
@@ -55,7 +55,7 @@ export const organizationData = {
           established: "২০১০",
           students: "২০০+",
           teachers: "১২+",
-          location: "গোলু গ্রাম, জিরবাড়ি, চট্টগ্রাম"
+          location: "PSTU, Dumki"
         }
       ]
     },

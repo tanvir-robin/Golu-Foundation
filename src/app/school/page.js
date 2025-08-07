@@ -270,86 +270,7 @@ const SchoolPage = () => {
         </div>
       </section>
 
-      {/* Admission Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">{schoolData.admission.title}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{schoolData.admission.description}</p>
-          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Admission Process */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">ভর্তি প্রক্রিয়া</h3>
-              <div className="space-y-6">
-                {schoolData.admission.process.map((step, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                      {step.step}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h4>
-                      <p className="text-gray-600">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Requirements and Fees */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">প্রয়োজনীয় কাগজপত্র</h3>
-              <ul className="space-y-3 mb-8">
-                {schoolData.admission.requirements.map((requirement, index) => (
-                  <li key={index} className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">{requirement}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">ফি কাঠামো</h3>
-              <div className="bg-gray-50 rounded-xl p-6">
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">ভর্তি ফি:</span>
-                    <span className="font-semibold">{schoolData.admission.fees.admission}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">মাসিক বেতন:</span>
-                    <span className="font-semibold">{schoolData.admission.fees.monthly}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">পরীক্ষার ফি:</span>
-                    <span className="font-semibold">{schoolData.admission.fees.exam}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">পরিবহন ফি:</span>
-                    <span className="font-semibold">{schoolData.admission.fees.transport}</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-20 bg-gray-50">
@@ -414,17 +335,7 @@ const SchoolPage = () => {
             </motion.div>
           </div>
 
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">প্রধান শিক্ষক</h3>
-            <p className="text-lg text-gray-600 mb-2">{schoolData.contact.principal}</p>
-            <p className="text-lg text-gray-600">{schoolData.contact.vicePrincipal}</p>
-          </motion.div>
+
         </div>
       </section>
     </main>

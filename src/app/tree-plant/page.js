@@ -205,7 +205,7 @@ const TreePlantPage = () => {
           </motion.div>
 
           <div className="space-y-8">
-            {treePlantData.activities.schedule.map((activity, index) => (
+            {treePlantData.activities.events.map((event, index) => (
               <motion.div
                 key={index}
                 className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
@@ -214,22 +214,19 @@ const TreePlantPage = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="grid lg:grid-cols-3 gap-6 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div className="lg:col-span-1">
-                    <div className="bg-green-600 text-white px-4 py-2 rounded-full inline-block mb-4">
-                      {activity.time}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{activity.activity}</h3>
-                    <p className="text-gray-600">{activity.description}</p>
-                  </div>
-                  <div className="lg:col-span-2">
                     <Image
-                      src={activity.image}
-                      alt={activity.activity}
+                      src={event.image}
+                      alt={event.title}
                       width={600}
-                      height={300}
-                      className="rounded-lg shadow-md"
+                      height={400}
+                      className="rounded-lg shadow-md w-full h-64 object-cover"
                     />
+                  </div>
+                  <div className="lg:col-span-1">
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">{event.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{event.description}</p>
                   </div>
                 </div>
               </motion.div>

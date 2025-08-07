@@ -8,12 +8,12 @@ const Contact = () => {
     {
       icon: FaMapMarkerAlt,
       title: "আমাদের দেখুন",
-      details: ["১২৩ ফাউন্ডেশন স্ট্রিট", "শহর, রাজ্য ১২৩৪৫", "দেশ"]
+      details: ["Dumki, PSTU", "Patuakhali", "Barisal"]
     },
     {
       icon: FaPhone,
       title: "আমাদের কল করুন",
-      details: ["+১ (৫৫৫) ১২৩-৪৫৬৭", "+১ (৫৫৫) ১২৩-৪৫৬৮"]
+      details: ["+88017000000000", "+88017000000000"]
     },
     {
       icon: FaEnvelope,

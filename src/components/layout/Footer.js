@@ -129,13 +129,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-green-400 w-5 h-5" />
                 <div>
-                  <p className="text-gray-400">১২৩ ফাউন্ডেশন স্ট্রিট</p>
-                  <p className="text-gray-400">শহর, রাজ্য ১২৩৪৫</p>
+                  <p className="text-gray-400">Dumki, PSTU</p>
+                  <p className="text-gray-400">Patuakhali, Barisal</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 w-5 h-5" />
-                <p className="text-gray-400">+১ (৫৫৫) ১২৩-৪৫৬৭</p>
+                <p className="text-gray-400">+8801700000000</p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-green-400 w-5 h-5" />

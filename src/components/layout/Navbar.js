@@ -23,8 +23,7 @@ const Navbar = () => {
       id: 'school',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'স্কুলের বিবরণ', href: '/school' },
-        { name: 'ভর্তি তথ্য', href: '/school#admission' }
+        { name: 'স্কুলের বিবরণ', href: '/school' }
       ]
     },
     { 

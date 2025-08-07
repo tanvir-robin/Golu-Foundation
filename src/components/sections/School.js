@@ -1,34 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaBook, FaUsers, FaTrophy, FaChalkboardTeacher, FaGraduationCap, FaHeart } from 'react-icons/fa';
+import { FaGraduationCap, FaHeart } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const School = () => {
-  const programs = [
-    {
-      icon: FaChalkboardTeacher,
-      title: "গুণগত শিক্ষাদান",
-      description: "অভিজ্ঞ শিক্ষকমণ্ডলী প্রতিটি শিক্ষার্থীকে ব্যক্তিগত মনোযোগ দিয়ে গুণগত শিক্ষা প্রদান করেন।",
-      image: "/images/school/class_time.jpg"
-    },
-    {
-      icon: FaBook,
-      title: "আধুনিক পাঠ্যক্রম",
-      description: "ঐতিহ্যগত মূল্যবোধের সাথে আধুনিক শিক্ষার সমন্বয়ে আপডেটেড সিলেবাস।",
-      image: "/images/school/clss_time_2.jpg"
-    },
-    {
-      icon: FaUsers,
-      title: "সম্প্রদায়ভিত্তিক শিক্ষা",
-      description: "সহযোগিতামূলক শিক্ষা এবং সম্প্রদায়ের অংশগ্রহণকে উৎসাহিত করা।",
-      image: "/images/school/cover_all_student.jpg"
-    }
-  ];
-
   const achievements = [
-    { number: "৫০০+", label: "স্নাতক শিক্ষার্থী" },
+    { number: "৫০০+", label: "প্রাক্তন শিক্ষার্থী" },
     { number: "৯৮%", label: "পাসের হার" },
     { number: "৫০+", label: "পুরস্কার প্রাপ্ত" },
     { number: "২৫+", label: "যোগ্য শিক্ষক" }
@@ -83,35 +62,80 @@ const School = () => {
           </div>
         </motion.div>
 
-        {/* Programs */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {programs.map((program, index) => (
-            <motion.div
-              key={index}
-              className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.8 }}
-              whileHover={{ y: -5 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative mb-6 rounded-lg overflow-hidden">
+        {/* Photo Gallery */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">স্কুলের ছবি</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              আমাদের স্কুলের দৈনন্দিন জীবনের স্মরণীয় মুহূর্তগুলো
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                src: "/images/school/morning_class.jpg",
+                alt: "সকালের ক্লাস",
+                caption: "প্রতিদিন সকালে শিক্ষার্থীরা উৎসাহের সাথে ক্লাসে অংশগ্রহণ করে"
+              },
+              {
+                src: "/images/school/students_taking_meal.jpg",
+                alt: "মিড-ডে মিল",
+                caption: "সব শিক্ষার্থী একসাথে পুষ্টিকর খাবার গ্রহণ করে"
+              },
+              {
+                src: "/images/school/cover_all_student.jpg",
+                alt: "স্কুলের শিক্ষার্থী",
+                caption: "আমাদের স্কুলের সব শিক্ষার্থী"
+              },
+              {
+                src: "/images/school/clss_time_2.jpg",
+                alt: "ক্লাসরুমে শিক্ষা",
+                caption: "শিক্ষকদের নিবিড় তত্ত্বাবধানে শিক্ষা গ্রহণ"
+              },
+              {
+                src: "/images/school/class_time.jpg",
+                alt: "শ্রেণিকক্ষে পাঠদান",
+                caption: "আধুনিক পদ্ধতিতে পাঠদান"
+              },
+              {
+                src: "/images/school/morning_class.jpg",
+                alt: "স্কুল প্রাঙ্গণ",
+                caption: "সবুজ প্রাঙ্গণে শিক্ষার্থীদের আনন্দময় সময়"
+              }
+            ].map((photo, index) => (
+              <motion.div
+                key={index}
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1, duration: 0.8 }}
+                whileHover={{ scale: 1.02 }}
+                viewport={{ once: true }}
+              >
                 <Image
-                  src={program.image}
-                  alt={program.title}
+                  src={photo.src}
+                  alt={photo.alt}
                   width={400}
-                  height={200}
-                  className="w-full h-48 object-cover"
+                  height={300}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute top-4 left-4 bg-blue-600 p-3 rounded-full">
-                  <program.icon className="text-white w-6 h-6" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h4 className="text-lg font-semibold mb-2">{photo.alt}</h4>
+                    <p className="text-sm opacity-90">{photo.caption}</p>
+                  </div>
                 </div>
-              </div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">{program.title}</h4>
-              <p className="text-gray-600">{program.description}</p>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* School Life Section */}
         <motion.div
